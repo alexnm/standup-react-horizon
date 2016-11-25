@@ -1,0 +1,14 @@
+* {
+   font-size: 20px;
+   line-height: 2.3;
+}
+
+.mh-20 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.mv-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

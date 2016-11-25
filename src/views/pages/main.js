@@ -1,5 +1,6 @@
 import React from "react";
 import { messageStream } from "../../utilities/horizon";
+import { MessageList, StandupForm } from "../components";
 
 const Main = React.createClass( {
     getInitialState( ) {
@@ -9,20 +10,21 @@ const Main = React.createClass( {
     },
 
     componentDidMount( ) {
-        messageStream.watch( ).subscribe( messages => this.setState( { messages } ) );
+        messageStream.order( "date" ).watch( ).subscribe( messages => this.setState( { messages } ) );
+    },
+
+    sendMessage( message ) {
+        messageStream.store( message );
     },
 
     render( ) {
         return (
             <div className="container">
-                <div>
-                    <h2>{ "Today's status:" }</h2>
-                </div>
-                <div>
-                    {
-                        this.state.messages.map( ( msg, index ) => <p key={ index }>{ msg.text }</p> )
-                    }
-                </div>
+                <MessageList
+                    messages={ this.state.messages }
+                    title="What a lovely day to code! What will you be doing?"
+                />
+                <StandupForm onSubmit={ this.sendMessage } />
             </div>
         );
     },
