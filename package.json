@@ -1,0 +1,38 @@
+{
+  "name": "standup-react-horizon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "hz serve --dev",
+    "compile": "webpack --progress --colors --watch",
+    "start": "npm run server & npm run compile",
+    "linter": "eslint src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexnm/standup-react-horizon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexnm/standup-react-horizon/issues"
+  },
+  "homepage": "https://github.com/alexnm/standup-react-horizon#readme",
+  "dependencies": {
+    "@horizon/client": "^2.0.0",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "webpack": "^1.13.3"
+  }
+}
