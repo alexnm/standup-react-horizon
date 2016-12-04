@@ -43,6 +43,7 @@ const StandupForm = React.createClass( {
                         className="form-control"
                         onChange={ event => this.setState( { author: event.target.value } ) }
                         placeholder="Who are you?"
+                        value={ this.state.author }
                     />
                 </div>
                 <div className="form-group">
@@ -52,6 +53,7 @@ const StandupForm = React.createClass( {
                         onChange={ event => this.setState( { text: event.target.value } ) }
                         onKeyPress={ this.onTextInputKeyPressed }
                         placeholder="What are you doing today?"
+                        value={ this.state.text }
                     />
                 </div>
                 <button type="button" onClick={ this.onSubmit } className="btn btn-default">Submit</button>

@@ -1,9 +1,4 @@
-import React from "react";
 import { render } from "react-dom";
-import { Main } from "./views/pages";
+import routes from "./router";
 
-const rootHtml = (
-    <Main />
-);
-
-render( rootHtml, document.getElementById( "react-root" ) );
+render( routes, document.getElementById( "react-root" ) );

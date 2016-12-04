@@ -1,5 +1,5 @@
 import React from "react";
-import { messageStream } from "../../utilities/horizon";
+import horizon from "../../utilities/horizon";
 import { MessageList, StandupForm } from "../components";
 
 const Main = React.createClass( {
@@ -10,11 +10,12 @@ const Main = React.createClass( {
     },
 
     componentDidMount( ) {
-        messageStream.order( "date" ).watch( ).subscribe( messages => this.setState( { messages } ) );
+        this.messageStream = horizon( "messages" );
+        this.messageStream.order( "date" ).watch( ).subscribe( messages => this.setState( { messages } ) );
     },
 
     sendMessage( message ) {
-        messageStream.store( message );
+        this.messageStream.store( message );
     },
 
     render( ) {
